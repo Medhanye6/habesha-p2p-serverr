@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "$2b$10$j6ffY3jIUjcNE.tzCsfisOgZsnQ/BihtjKGOsehXgm1Ew.lIoxh/y",
+      "username": null,
+      "role": "admin",
+      "createdAt": "2025-10-26T10:53:02.530Z"
+    },
+    {
+      "id": 2,
+      "email": "merchant@example.com",
+      "password": "$2b$10$BzpcDYdwGMCxNvN8fzLrHuIZy7dw8VDovFgCanM/iKHwIqAEaEJCa",
+      "username": "Merchant",
+      "role": "user",
+      "createdAt": "2025-10-26T10:53:39.123Z",
+      "updatedAt": "2025-10-26T10:53:52.048Z",
+      "paymentAccounts": [
+        {
+          "id": 1,
+          "bankName": "Telebirr",
+          "accountNumber": "090000001",
+          "nickname": "MedhanyeM"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "email": "user@example.com",
+      "password": "$2b$10$djxY0nLkevVGTgOn4q3zUuS2s7zSnqOekeSPRjcmnEwrmCprEsqjC",
+      "username": null,
+      "role": "user",
+      "createdAt": "2025-10-26T10:55:05.978Z",
+      "twoFactorSecret": "KFHDKR3SKJRHKRCUEZJUIJDVGRADIZJOPFLS4IZ4O5XWQPRIKBVQ",
+      "isTwoFactorEnabled": true,
+      "updatedAt": "2025-10-26T20:37:29.135Z"
+    },
+    {
+      "id": 4,
+      "email": "buyer@example.com",
+      "password": "$2b$10$H92lPTOtkOK8Wx.eL3r8auXf5db0QYwGcDkSajplNo5WbjI1TTGkW",
+      "username": "Buyer",
+      "role": "user",
+      "createdAt": "2025-10-26T10:55:11.869Z",
+      "updatedAt": "2025-10-26T19:29:58.074Z",
+      "paymentAccounts": [
+        {
+          "id": 1,
+          "bankName": "Telebirr ",
+          "accountNumber": "0909090909",
+          "nickname": "BuyerM"
+        }
+      ],
+      "resetToken": null,
+      "resetTokenExpiry": null
+    }
+  ],
+  "merchants": [
+    {
+      "id": 1,
+      "userId": 2,
+      "status": "approved",
+      "createdAt": "2025-10-26T10:54:03.229Z"
+    }
+  ],
+  "ads": [
+    {
+      "id": 2,
+      "merchantId": 2,
+      "type": "sell",
+      "asset": "USDT",
+      "fiat": "ETB",
+      "price": 162.5,
+      "amount": 1000,
+      "paymentMethods": [
+        "Telebirr",
+        "CBE Birr"
+      ],
+      "status": "active",
+      "createdAt": "2025-10-26T10:58:15.544Z"
+    },
+    {
+      "id": 2,
+      "merchantId": 2,
+      "type": "buy",
+      "asset": "USDT",
+      "fiat": "ETB",
+      "price": 160,
+      "amount": 1000,
+      "paymentMethods": [
+        "Telebirr"
+      ],
+      "status": "active",
+      "createdAt": "2025-10-26T19:08:55.876Z"
+    }
+  ],
+  "trades": [
+    {
+      "id": 1,
+      "adId": 1,
+      "buyerId": 2,
+      "sellerId": 4,
+      "merchantId": 2,
+      "asset": "USDT",
+      "fiat": "ETB",
+      "amount": 10,
+      "fiatAmount": 1620,
+      "status": "completed",
+      "createdAt": "2025-10-26T10:55:21.802Z",
+      "chatMessages": []
+    },
+    {
+      "id": 2,
+      "adId": 1,
+      "buyerId": 2,
+      "sellerId": 4,
+      "merchantId": 2,
+      "asset": "USDT",
+      "fiat": "ETB",
+      "amount": 100,
+      "fiatAmount": 16200,
+      "status": "paid",
+      "createdAt": "2025-10-26T10:56:10.296Z",
+      "chatMessages": []
+    },
+    {
+      "id": 3,
+      "adId": 2,
+      "buyerId": 4,
+      "sellerId": 2,
+      "merchantId": 2,
+      "asset": "USDT",
+      "fiat": "ETB",
+      "amount": 10,
+      "fiatAmount": 1625,
+      "status": "completed",
+      "createdAt": "2025-10-26T10:58:27.273Z",
+      "chatMessages": []
+    },
+    {
+      "id": 4,
+      "adId": 1,
+      "buyerId": 2,
+      "sellerId": 4,
+      "merchantId": 2,
+      "asset": "USDT",
+      "fiat": "ETB",
+      "amount": 10,
+      "fiatAmount": 1620,
+      "status": "paid",
+      "createdAt": "2025-10-26T12:38:55.952Z",
+      "chatMessages": [
+        {
+          "text": "Hey",
+          "senderId": 4,
+          "timestamp": "2025-10-26T14:53:11.931Z"
+        },
+        {
+          "text": "Hey",
+          "senderId": 2,
+          "timestamp": "2025-10-26T15:50:04.321Z"
+        }
+      ]
+    }
+  ]
+}
