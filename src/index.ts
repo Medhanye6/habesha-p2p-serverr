@@ -20,17 +20,19 @@ interface PaymentAccount {
     nickname: string;
 }
 
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5175'; 
+console.log(`Configuring CORS for origin: ${frontendUrl}`); // Add this log to verify
 
 const app = express()
 const port = 3001
 const httpServer = createServer(app); // Create HTTP server from Express app
 const io = new Server(httpServer, {  // Attach socket.io
   cors: {
-    origin: "http://localhost:5175", // Allow your frontend to connect
+    origin: frontendUrl, // Allow your frontend to connect
     methods: ["GET", "POST"]
   }
 });
-app.use(cors({ origin: 'http://localhost:5175' }));
+app.use(cors({ origin: frontendUrl }));
 // This tells Express to parse JSON data from incoming requests
 app.use(express.json());
 
